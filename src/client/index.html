@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- <link href="stylesheets/css/demo.css" type="text/css" rel="stylesheet"> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script> -->
+    <script src="javascripts/lib/angular.js"></script>
+    <script type="text/javascript" src="javascripts/lib/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="javascripts/angular-permission.js"></script>
+    <script type="text/javascript" src="javascripts/angular-permission-ui.js"></script>
+
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <script type="text/javascript" src="javascripts/services.js"></script>
+    <script type="text/javascript" src="javascripts/controllers.js"></script> 
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/css/app.css"/>
+
+    <link href="javascripts/lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/css/angular-moment-picker.min.css">
+    <link rel="stylesheet" type="text/css" href="javascripts/bower_components/angular-ui-grid/ui-grid.css">
+
+
+</head>
+
+<!-- <div ng-app="app" ng-controller="appController_2 as ctrl">
+<a id="authorize" ng-click="ctrl.test_ctrl2()"><i class="material-icons">lock</i></a>
+
+AZAZAZ
+</div> -->
+
+
+<!-- <body ng-app="app" ng-controller="appController as ctrl"> -->
+<!--   <body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="movies"> Ecoflight</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="movies">Real-Time</a></li>
+                    <li><a ui-sref="noise">Noise</a></li>
+                    <li><a ui-sref="tracks">Tracks</a></li>
+                    <li><a ui-sref="stats">Statistics</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <link rel="stylesheet" type="text/css" href="stylesheets/css/angular-moment-picker.min.css">
+
+</body>
+ -->
+  <body ng-app="app">
+
+<!--     <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="test"> Ecoflight</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    
+                    <li ui-sref-active="active"><a ui-sref="app.map">Map</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li>
+
+
+                    <div ng-controller="LoginController">
+                        LOGINNN
+                    <li ui-sref-active="active" class="authorize" permission permission-except="'AUTHORIZED'">
+                    <li>
+
+                    <button ng-click="test()" class="btn btn-primary">OK</button>
+
+                    </li>
+                    </div>
+
+                    <div ng-controller="LogoutController"> 
+
+                    <button ng-click="logout()" class="btn btn-primary">LOGOUT</button>
+
+                    <li ui-sref-active="active" class="authorize" permission permission-only="'AUTHORIZED'">
+                        LOGOUTTT
+                    <a ng-click="logout()">Logout</a>
+                    </li>
+                    </div>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+ -->
+    
+        <aside ui-view="nav"></aside>
+
+        <main ui-view="main"></main>
+
+        <!-- <li ui-sref-active="active"><a ui-sref="">Main</a></li> -->
+
+
+
+    <!-- <a ui-sref="hello" ui-sref-active="active">Hello</a> -->
+    <!-- <a ui-sref="about" ui-sref-active="active">About</a> -->
+
+    <ui-view>
+        
+    </ui-view>
+  </body>
+
+
+</html>

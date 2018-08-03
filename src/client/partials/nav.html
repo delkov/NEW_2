@@ -1,0 +1,54 @@
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- <a class="navbar-brand" ui-sref="test">  -->
+                <i class="navbar-brand"> Ecoflight </i>
+            <!-- </a> -->
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    
+
+
+
+
+
+
+
+                    <!-- <li ui-sref-active="active"><a ui-sref="app.logins">Login</a></li>                     -->
+                    <li ui-sref-active="active"><a ui-sref="app.bio">Bio</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.map">Map</a></li>
+                    <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li>
+
+
+
+                    <!-- <div ng-controller="LoginController"> -->
+                        <li ng-controller="LoginController" ui-sref-active="active" class="authorize" permission permission-except="'AUTHORIZED'">
+                            <a ui-sref="app.login">Login</a>
+                        <li>    
+                    <!-- </div> -->
+
+                    <!-- <div ng-controller="LogoutController"> -->
+                        <li ng-controller="LogoutController" ui-sref-active="active" class="authorize" permission permission-only="'AUTHORIZED'">
+                            <!-- <a ui-sref="app.login">Login</a> -->
+                            <a ui-sref="" ng-click="logout()">LOGOUT</a>
+                            <!-- <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li> -->
+                        <li>
+                    <!-- </div> -->
+
+<!-- 
+                    <div ng-controller="LogoutController"> 
+
+                    <button ng-click="logout()" class="btn btn-primary">LOGOUT</button>
+
+                    <li ui-sref-active="active" class="authorize" permission permission-only="'AUTHORIZED'">
+                        LOGOUTTT
+                    <a ng-click="logout()">Logout</a>
+                    </li>
+                    </div>
+ -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>

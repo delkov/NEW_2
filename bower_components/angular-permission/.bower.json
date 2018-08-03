@@ -1,0 +1,58 @@
+{
+  "name": "angular-permission",
+  "version": "6.0.0",
+  "authors": [
+    "Rafael Vidaurre <narzerus@gmail.com> (http://www.rafaelvidaurre.com)",
+    "Blazej Krysiak <blazej.krysiak@gmail.com>"
+  ],
+  "description": "Fully featured role and permission based access control for your angular applications",
+  "main": [
+    "dist/angular-permission.js",
+    "dist/angular-permission-ui.js",
+    "dist/angular-permission-ng.js"
+  ],
+  "keywords": [
+    "angular",
+    "ui-router",
+    "ng-route",
+    "angular-route",
+    "access-control",
+    "permissions",
+    "access",
+    "acl",
+    "rbac",
+    "roles",
+    "route"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Narzerus/angular-permission",
+  "ignore": [
+    "**/.*",
+    "config",
+    "test",
+    "demo",
+    "src",
+    "Gruntfile.js",
+    "index.js",
+    "package.json",
+    "CONTRIBUTING.md"
+  ],
+  "devDependencies": {
+    "angular-mocks": "*",
+    "angular-route": "*",
+    "angular-ui-router": "*"
+  },
+  "dependencies": {
+    "angular": ">=1.4.8"
+  },
+  "_release": "6.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v6.0.0",
+    "commit": "b5f8d15267657b6c54d9bbe9f49437f3bf3f542b"
+  },
+  "_source": "https://github.com/Narzerus/angular-permission.git",
+  "_target": "^6.0.0",
+  "_originalSource": "angular-permission",
+  "_direct": true
+}
