@@ -1904,7 +1904,7 @@
                         target: el,
                         // If the type is not set, we're running a custom event (#2297).
                         // If it is set, we're running a browser event, and setting it
-                        // will cause en error in IE8 (#2465).		
+                        // will cause en error in IE8 (#2465).      
                         type: type
                     });
                 }
@@ -4758,7 +4758,7 @@
                                     }
 
                                     /*if (width) {
-                                    	renderer.breakText(wrapper, width);
+                                        renderer.breakText(wrapper, width);
                                     }*/
 
                                     // Check width and apply soft breaks or ellipsis
@@ -4842,34 +4842,34 @@
 
             /*
             breakText: function (wrapper, width) {
-            	var bBox = wrapper.getBBox(),
-            		node = wrapper.element,
-            		textLength = node.textContent.length,
-            		pos = Math.round(width * textLength / bBox.width), // try this position first, based on average character width
-            		increment = 0,
-            		finalPos;
+                var bBox = wrapper.getBBox(),
+                    node = wrapper.element,
+                    textLength = node.textContent.length,
+                    pos = Math.round(width * textLength / bBox.width), // try this position first, based on average character width
+                    increment = 0,
+                    finalPos;
 
-            	if (bBox.width > width) {
-            		while (finalPos === undefined) {
-            			textLength = node.getSubStringLength(0, pos);
+                if (bBox.width > width) {
+                    while (finalPos === undefined) {
+                        textLength = node.getSubStringLength(0, pos);
 
-            			if (textLength <= width) {
-            				if (increment === -1) {
-            					finalPos = pos;
-            				} else {
-            					increment = 1;
-            				}
-            			} else {
-            				if (increment === 1) {
-            					finalPos = pos - 1;
-            				} else {
-            					increment = -1;
-            				}
-            			}
-            			pos += increment;
-            		}
-            	}
-            	console.log('width', width, 'stringWidth', node.getSubStringLength(0, finalPos))
+                        if (textLength <= width) {
+                            if (increment === -1) {
+                                finalPos = pos;
+                            } else {
+                                increment = 1;
+                            }
+                        } else {
+                            if (increment === 1) {
+                                finalPos = pos - 1;
+                            } else {
+                                increment = -1;
+                            }
+                        }
+                        pos += increment;
+                    }
+                }
+                console.log('width', width, 'stringWidth', node.getSubStringLength(0, finalPos))
             },
             */
 
@@ -5465,7 +5465,7 @@
                                 }
 
                                 // Center the image
-                                symbolSizes[imageSrc] = { // Cache for next	
+                                symbolSizes[imageSrc] = { // Cache for next 
                                     width: this.width,
                                     height: this.height
                                 };
@@ -5916,8 +5916,8 @@
              *         coordinates it should be pinned to.
              * @param  {Boolean} baseline
              *         Whether to position the label relative to the text baseline,
-             *	       like {@link Highcharts.SVGRenderer#text|renderer.text}, or to the
-             *	       upper border of the rectangle.
+             *         like {@link Highcharts.SVGRenderer#text|renderer.text}, or to the
+             *         upper border of the rectangle.
              * @param  {String} className
              *         Class name for the group.
              *
@@ -6911,13 +6911,13 @@
 
                     // Loop up again to handle path shortcuts (#2132)
                     /*while (i++ < path.length) {
-                    	if (path[i] === 'H') { // horizontal line to
-                    		path[i] = 'L';
-                    		path.splice(i + 2, 0, path[i - 1]);
-                    	} else if (path[i] === 'V') { // vertical line to
-                    		path[i] = 'L';
-                    		path.splice(i + 1, 0, path[i - 2]);
-                    	}
+                        if (path[i] === 'H') { // horizontal line to
+                            path[i] = 'L';
+                            path.splice(i + 2, 0, path[i - 1]);
+                        } else if (path[i] === 'V') { // vertical line to
+                            path[i] = 'L';
+                            path.splice(i + 1, 0, path[i - 2]);
+                        }
                     }*/
                     return path.join(' ') || 'x';
                 },
@@ -7110,7 +7110,7 @@
                     strokeElem[key] = value || 'solid';
                     this[key] = value;
                     /* because changing stroke-width will change the dash length
-				and cause an epileptic effect */
+                and cause an epileptic effect */
                 },
                 dSetter: function(value, key, element) {
                     var i,
@@ -7207,8 +7207,8 @@
                         key = 'top';
                     }
                     /* else {
-                    				value = Math.max(0, value); // don't set width or height below zero (#311)
-                    			}*/
+                                    value = Math.max(0, value); // don't set width or height below zero (#311)
+                                }*/
 
                     // clipping rectangle special
                     if (this.updateClipping) {
@@ -7850,7 +7850,7 @@
         /* ****************************************************************************
          * Handle the options                                                         *
          *****************************************************************************/
-        /** 	 
+        /**      
          * @optionparent
          */
         H.defaultOptions = {
@@ -8660,8 +8660,8 @@
                  */
 
                 //style: {
-                //	fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
-                //	fontSize: '12px'
+                //  fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif', // default font
+                //  fontSize: '12px'
                 //},
 
                 /**
@@ -9335,7 +9335,7 @@
                 // reversed: false,
                 // backgroundColor: null,
                 /*style: {
-                	padding: '5px'
+                    padding: '5px'
                 },*/
 
 
@@ -10974,7 +10974,7 @@
                     x: 0
                     //y: undefined
                     /*formatter: function () {
-                    	return this.value;
+                        return this.value;
                     },*/
                 },
                 //linkedTo: null,
@@ -11048,15 +11048,15 @@
                 //opposite: false,
                 //offset: 0,
                 //plotBands: [{
-                //	events: {},
-                //	zIndex: 1,
-                //	labels: { align, x, verticalAlign, y, style, rotation, textAlign }
+                //  events: {},
+                //  zIndex: 1,
+                //  labels: { align, x, verticalAlign, y, style, rotation, textAlign }
                 //}],
                 //plotLines: [{
-                //	events: {}
+                //  events: {}
                 //  dashStyle: {}
-                //	zIndex:
-                //	labels: { align, x, verticalAlign, y, style, rotation, textAlign }
+                //  zIndex:
+                //  labels: { align, x, verticalAlign, y, style, rotation, textAlign }
                 //}],
                 //reversed: false,
                 // showFirstLabel: true,
@@ -14482,7 +14482,7 @@
             },
 
             /**
-             *	Hide the crosshair if visible.
+             *  Hide the crosshair if visible.
              */
             hideCrosshair: function() {
                 if (this.cross) {
@@ -17945,10 +17945,10 @@
 
                 // If the item exceeds the height, start a new column
                 /*if (!horizontal && legend.itemY + options.y +
-                		itemHeight > chart.chartHeight - spacingTop - spacingBottom) {
-                	legend.itemY = legend.initialItemY;
-                	legend.itemX += legend.maxItemWidth;
-                	legend.maxItemWidth = 0;
+                        itemHeight > chart.chartHeight - spacingTop - spacingBottom) {
+                    legend.itemY = legend.initialItemY;
+                    legend.itemX += legend.maxItemWidth;
+                    legend.maxItemWidth = 0;
                 }*/
 
                 // Set the edge positions
@@ -18182,15 +18182,15 @@
 
                 // 1.x compatibility: positioning based on style
                 /*var props = ['left', 'right', 'top', 'bottom'],
-                	prop,
-                	i = 4;
+                    prop,
+                    i = 4;
                 while (i--) {
-                	prop = props[i];
-                	if (options.style[prop] && options.style[prop] !== 'auto') {
-                		options[i < 2 ? 'align' : 'verticalAlign'] = prop;
-                		options[i < 2 ? 'x' : 'y'] = 
-                			pInt(options.style[prop]) * (i % 2 ? -1 : 1);
-                	}
+                    prop = props[i];
+                    if (options.style[prop] && options.style[prop] !== 'auto') {
+                        options[i < 2 ? 'align' : 'verticalAlign'] = prop;
+                        options[i < 2 ? 'x' : 'y'] = 
+                            pInt(options.style[prop]) * (i % 2 ? -1 : 1);
+                    }
                 }*/
 
                 if (display) {
@@ -18632,12 +18632,12 @@
          *
          * @example
          * var chart = Highcharts.chart('container', {
-         * 	   title: {
-         * 	   	   text: 'My chart'
-         * 	   },
-         * 	   series: [{
-         * 	       data: [1, 3, 2, 4]
-         * 	   }]
+         *     title: {
+         *         text: 'My chart'
+         *     },
+         *     series: [{
+         *         data: [1, 3, 2, 4]
+         *     }]
          * })
          */
         var Chart = H.Chart = function() {
@@ -19756,9 +19756,9 @@
                 // in Firefox, but not supported in IE.
                 /*
                 if (win.matchMedia) {
-                	win.matchMedia('print').addListener(function reflow() {
-                		chart.reflow();
-                	});
+                    win.matchMedia('print').addListener(function reflow() {
+                        chart.reflow();
+                    });
                 }
                 */
             },
@@ -24740,11 +24740,11 @@
                     series.applyZones();
                 }
 
-                /*		each(series.points, function (point) {
-                			if (point.redraw) {
-                				point.redraw();
-                			}
-                		});*/
+                /*      each(series.points, function (point) {
+                            if (point.redraw) {
+                                point.redraw();
+                            }
+                        });*/
 
                 // draw the data labels (inn pies they go before the points)
                 if (series.drawDataLabels) {
@@ -25775,7 +25775,7 @@
                     newHeight,
                     itemsForRemoval = [];
 
-                // If the top-level chart option is present, some special updates are required		
+                // If the top-level chart option is present, some special updates are required      
                 if (optionsChart) {
                     merge(true, chart.options.chart, optionsChart);
 
@@ -26941,40 +26941,40 @@
                 // Visualize control points for debugging
                 /*
                 if (leftContX) {
-                	this.chart.renderer.circle(leftContX + this.chart.plotLeft, leftContY + this.chart.plotTop, 2)
-                		.attr({
-                			stroke: 'red',
-                			'stroke-width': 2,
-                			fill: 'none',
-                			zIndex: 9
-                		})
-                		.add();
-                	this.chart.renderer.path(['M', leftContX + this.chart.plotLeft, leftContY + this.chart.plotTop,
-                		'L', plotX + this.chart.plotLeft, plotY + this.chart.plotTop])
-                		.attr({
-                			stroke: 'red',
-                			'stroke-width': 2,
-                			zIndex: 9
-                		})
-                		.add();
+                    this.chart.renderer.circle(leftContX + this.chart.plotLeft, leftContY + this.chart.plotTop, 2)
+                        .attr({
+                            stroke: 'red',
+                            'stroke-width': 2,
+                            fill: 'none',
+                            zIndex: 9
+                        })
+                        .add();
+                    this.chart.renderer.path(['M', leftContX + this.chart.plotLeft, leftContY + this.chart.plotTop,
+                        'L', plotX + this.chart.plotLeft, plotY + this.chart.plotTop])
+                        .attr({
+                            stroke: 'red',
+                            'stroke-width': 2,
+                            zIndex: 9
+                        })
+                        .add();
                 }
                 if (rightContX) {
-                	this.chart.renderer.circle(rightContX + this.chart.plotLeft, rightContY + this.chart.plotTop, 2)
-                		.attr({
-                			stroke: 'green',
-                			'stroke-width': 2,
-                			fill: 'none',
-                			zIndex: 9
-                		})
-                		.add();
-                	this.chart.renderer.path(['M', rightContX + this.chart.plotLeft, rightContY + this.chart.plotTop,
-                		'L', plotX + this.chart.plotLeft, plotY + this.chart.plotTop])
-                		.attr({
-                			stroke: 'green',
-                			'stroke-width': 2,
-                			zIndex: 9
-                		})
-                		.add();
+                    this.chart.renderer.circle(rightContX + this.chart.plotLeft, rightContY + this.chart.plotTop, 2)
+                        .attr({
+                            stroke: 'green',
+                            'stroke-width': 2,
+                            fill: 'none',
+                            zIndex: 9
+                        })
+                        .add();
+                    this.chart.renderer.path(['M', rightContX + this.chart.plotLeft, rightContY + this.chart.plotTop,
+                        'L', plotX + this.chart.plotLeft, plotY + this.chart.plotTop])
+                        .attr({
+                            stroke: 'green',
+                            'stroke-width': 2,
+                            zIndex: 9
+                        })
+                        .add();
                 }
                 // */
                 ret = [
@@ -29684,7 +29684,7 @@
                             };
                         }
 
-                        // Animate or set the opacity					
+                        // Animate or set the opacity                   
                         label.alignAttr.opacity = newOpacity;
                         label[label.isOld ? 'animate' : 'attr'](
                             label.alignAttr,
@@ -29843,9 +29843,9 @@
 
                 // handle single points
                 /*for (i = 0; i < singlePoints.length; i++) {
-                	singlePoint = singlePoints[i];
-                	trackerPath.push(M, singlePoint.plotX - snap, singlePoint.plotY,
-                	L, singlePoint.plotX + snap, singlePoint.plotY);
+                    singlePoint = singlePoints[i];
+                    trackerPath.push(M, singlePoint.plotX - snap, singlePoint.plotY,
+                    L, singlePoint.plotX + snap, singlePoint.plotY);
                 }*/
 
                 // draw the tracker
@@ -30372,10 +30372,10 @@
                     }
 
                     /*attribs = radius ? { // new symbol attributes (#507, #612)
-                    	x: plotX - radius,
-                    	y: plotY - radius,
-                    	width: 2 * radius,
-                    	height: 2 * radius
+                        x: plotX - radius,
+                        y: plotY - radius,
+                        width: 2 * radius,
+                        height: 2 * radius
                     } : {};*/
 
 
@@ -30741,7 +30741,7 @@
              * {@link Highcharts.Chart#getSelectedSeries} function.
              *
              * @param  {Boolean} [selected]
-             *         True to select the series, false to unselect. If	undefined, the
+             *         True to select the series, false to unselect. If undefined, the
              *         selection state is toggled.
              *
              * @sample highcharts/members/series-select/
@@ -32031,7 +32031,7 @@
             wrap = H.wrap;
 
         /* ****************************************************************************
-         * Start data grouping module												 *
+         * Start data grouping module                                                *
          ******************************************************************************/
 
         var seriesProto = Series.prototype,
@@ -32684,7 +32684,7 @@
 
 
         /* ****************************************************************************
-         * End data grouping module												   *
+         * End data grouping module                                                *
          ******************************************************************************/
 
     }(Highcharts));
@@ -32933,7 +32933,7 @@
             }
         });
         /* ****************************************************************************
-         * End OHLC series code													   *
+         * End OHLC series code                                                    *
          *****************************************************************************/
 
     }(Highcharts));
@@ -33167,7 +33167,7 @@
         });
 
         /* ****************************************************************************
-         * End Candlestick series code												*
+         * End Candlestick series code                                              *
          *****************************************************************************/
 
     }(Highcharts));
@@ -33692,7 +33692,7 @@
         }
 
         /* ****************************************************************************
-         * End Flags series code													  *
+         * End Flags series code                                                      *
          *****************************************************************************/
 
     }(Highcharts));
@@ -34628,7 +34628,7 @@
          * License: www.highcharts.com/license
          */
         /* ****************************************************************************
-         * Start Navigator code														*
+         * Start Navigator code                                                     *
          *****************************************************************************/
         var addEvent = H.addEvent,
             Axis = H.Axis,
@@ -36593,7 +36593,7 @@
         });
 
         /* ****************************************************************************
-         * End Navigator code														  *
+         * End Navigator code                                                         *
          *****************************************************************************/
 
     }(Highcharts));
@@ -36626,7 +36626,7 @@
             wrap = H.wrap;
 
         /* ****************************************************************************
-         * Start Range Selector code												  *
+         * Start Range Selector code                                                  *
          *****************************************************************************/
         extend(defaultOptions, {
 
@@ -37351,7 +37351,7 @@
              * Get the extremes of YTD. 
              * Will choose dataMax if its value is lower than the current timestamp.
              * Will choose dataMin if its value is higher than the timestamp for
-             * 	the start of current year.
+             *  the start of current year.
              * @param  {number} dataMax
              * @param  {number} dataMin
              * @return {object} Returns min and max for the YTD
@@ -37688,7 +37688,7 @@
         H.RangeSelector = RangeSelector;
 
         /* ****************************************************************************
-         * End Range Selector code													*
+         * End Range Selector code                                                  *
          *****************************************************************************/
 
     }(Highcharts));
@@ -38087,7 +38087,7 @@
 
         // Function to crisp a line with multiple segments
         SVGRenderer.prototype.crispPolyLine = function(points, width) {
-            // points format: ['M', 0, 0, 'L', 100, 0]		
+            // points format: ['M', 0, 0, 'L', 100, 0]      
             // normalize to a crisp line
             var i;
             for (i = 0; i < points.length; i = i + 6) {
@@ -38257,7 +38257,7 @@
         });
 
         /* ****************************************************************************
-         * Start value compare logic												  *
+         * Start value compare logic                                                  *
          *****************************************************************************/
 
         /**
@@ -38432,7 +38432,7 @@
         };
 
         /* ****************************************************************************
-         * End value compare logic													*
+         * End value compare logic                                                  *
          *****************************************************************************/
 
 

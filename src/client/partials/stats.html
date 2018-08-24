@@ -1,3 +1,28 @@
+<div class="row" align="center" style="margin-left: 40px; max-width: 95%;">
+Аэроодром
+  <ui-select ng-model="selected_airport.selected" theme="select2" style="min-width: 100px;" on-select="onSelectAirportCallback()" >
+    <ui-select-match placeholder="Select an airport">{{$select.selected.name || $select.selected}}</ui-select-match>
+    <ui-select-choices repeat="airport as airport in airports">
+      <div ng-bind-html="airport.name "></div>
+    </ui-select-choices>
+  </ui-select>
+
+  &nbsp;
+    Станция
+    <ui-select ng-model="selected_station.selected" theme="select2"  style="min-width: 300px;" on-select="onSelectStationCallback()">
+    <ui-select-match placeholder="Select a station">{{$select.selected.name || $select.selected}}</ui-select-match>
+    <ui-select-choices repeat="station as station in stations">
+      <div ng-bind-html="station.name "></div>
+      <small>
+        address: {{station.address}} 
+        <!-- age: <span ng-bind-html="''+airport.age "></span> -->
+      </small>
+    </ui-select-choices>
+  </ui-select>
+</div>
+<div style="height:50px;"></div>
+
+
 <center> 
 
     <highchart id="chart1" config="chartConfig" class="grid"></highchart>

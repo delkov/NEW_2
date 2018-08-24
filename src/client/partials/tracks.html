@@ -1,3 +1,18 @@
+<div class="row" align="center" style="margin-left: 40px; max-width: 95%;">
+Аэроодром
+  <ui-select ng-model="selected_airport.selected" theme="select2" style="min-width: 100px;" on-select="onSelectAirportCallback()" >
+    <ui-select-match placeholder="Select an airport">{{$select.selected.name || $select.selected}}</ui-select-match>
+    <ui-select-choices repeat="airport as airport in airports">
+      <div ng-bind-html="airport.name "></div>
+    </ui-select-choices>
+  </ui-select>
+
+
+<div style="height:50px;"></div>
+
+
+
+
   <body>
 
 
@@ -73,11 +88,12 @@
 
 
 
-
+<center>
 <div style="height:50px;"></div>
 
-      <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="grid3"></div>
+      <!-- <div ui-grid="gridOptions" ui-grid-selection ui-grid-cellnav ui-grid-custom-cell-select class="grid3"></div> -->
+      <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter ui-grid-cellnav ui-grid-custom-cell-select class="grid3"></div>
 
 </body>
-
+</center>
 

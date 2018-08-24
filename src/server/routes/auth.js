@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+var db = require('../db/queries'); // db for DATA and for USERS are not same, diffrent privilegies sure..
+
 const authHelpers = require('../auth/_helpers');
 const passport = require('../auth/local');
 
@@ -23,33 +25,11 @@ router.post('/login', authHelpers.loginRedirect, (req, res, next) => {
       req.logIn(user, function (err) {
         if (err) { handleResponse(res, 500, 'error'); }
         handleResponse(res, 200, 'success');
+        // console.log('USER OBJEST', user);
       });
     }
   })(req, res, next);
 });
-
-
-// router.post('/login', function(req, res, next) {
-//   // passport.authenticate('local', function(err, user, info) {
-//   //   if (err) {
-//   //     return next(err);
-//   //   }
-//   //   if (!user) {
-//   //     return res.status(401).json({
-//   //       err: info
-//   //     });
-//   //   }
-//   //   req.logIn(user, function(err) {
-//   //     if (err) {
-//   //       return res.status(500).json({
-//   //         err: 'Could not log in user'
-//   //       });
-//   //     }
-//   //     res.status(200).json({
-//   //       status: 'Login successful!'
-//   //     });
-//   //   });
-//   // })(req, res, next);
 
 
 //   console.log('AZAZA');
@@ -64,7 +44,6 @@ router.post('/login', authHelpers.loginRedirect, (req, res, next) => {
 
 
 
-
 router.get('/logout', authHelpers.loginRequired, (req, res, next) => {
   req.logout();
   handleResponse(res, 200, 'succes');
@@ -74,7 +53,7 @@ router.get('/logout', authHelpers.loginRequired, (req, res, next) => {
 });
 
 router.get('/status', function(req, res) {
-  console.log(req);
+  // console.log(req.user);
   if (!req.isAuthenticated()) {
     console.log('NOT LOGED IN')
     return res.status(200).json({
@@ -82,10 +61,65 @@ router.get('/status', function(req, res) {
     });
   }
   console.log('LOGED IN')
-  res.status(200).json({
-    status: true
-  });
+  if (req.user.admin) {
+    res.status(200).json({
+      status: true,
+      admin: true
+    });
+  } else {
+    res.status(200).json({
+      status: true,
+      admin: false
+
+    });
+  }
+
+
 });
+
+
+
+// router.get('/admin_status', function(req, res) {
+//   console.log(req);
+//   if (!req.isAuthenticated()) {
+//     console.log('NOT LOGED IN')
+//     return res.status(200).json({
+//       status: false
+//     });
+
+
+
+//     knex('users').where({username: req.user.username}).first()
+//     .then((user) => {
+//       if (!user.admin) res.status(401).json({status: 'You are not authorized as admin'});
+//         return next();
+//     }).catch((err) => {
+//       res.status(500).json({status: 'Something bad happened'});
+//     })
+
+
+//   }
+//   // console.log('LOGED IN')
+//   // res.status(200).json({
+//     // status: true
+//   // });
+// });
+
+
+
+
+// function adminRequired(req, res, next) {
+//   if (!req.user) res.status(401).json({status: 'Please log in'});
+//   return knex('users').where({username: req.user.username}).first()
+//   .then((user) => {
+//     if (!user.admin) res.status(401).json({status: 'You are not authorized as admin'});
+//     return next();
+//   })
+//   .catch((err) => {
+//     res.status(500).json({status: 'Something bad happened'});
+//   });
+// }
+
 
 
 // router.post('/register', authHelpers.loginRedirect, (req, res, next)  => {

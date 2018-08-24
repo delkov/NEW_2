@@ -2,7 +2,12 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <!-- <a class="navbar-brand" ui-sref="test">  -->
-                <i class="navbar-brand"> Ecoflight </i>
+                    <!-- <img href="ecoflight.jpg"> -->
+                    <!-- <img src="/partials/ecoflight.jpg" style="width:128px;height:128px;"> -->
+                    <!-- <img src="/partials/ecoflight.jpg" style="height:58px;">
+ -->
+
+                <i class="navbar-brand" onmouseover="" style="cursor: default;"> Ecoflight </i>
             <!-- </a> -->
             </div>
             <div class="collapse navbar-collapse">
@@ -13,25 +18,34 @@
 
 
 
-
-
                     <!-- <li ui-sref-active="active"><a ui-sref="app.logins">Login</a></li>                     -->
                     <li ui-sref-active="active"><a ui-sref="app.bio">Bio</a></li>
-                    <li ui-sref-active="active"><a ui-sref="app.map">Map</a></li>
-                    <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li>
+                    <li permission permission-sref="'app.monit'" ui-sref-active="active"><a ui-sref="app.monit">Мониторинг</a></li>
+                    <li permission permission-sref="'app.stats'" ui-sref-active="active"><a ui-sref="app.stats">Статистика</a></li>
+                    <li permission permission-sref="'app.noise'" ui-sref-active="active"><a ui-sref="app.noise">Все шумовые данные</a></li>
+                    <li permission permission-sref="'app.tracks'" ui-sref-active="active"><a ui-sref="app.tracks">Все самолеты</a></li>
+
+
+                    <!-- <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li> -->
+
+                    <!-- <div permission permission-sref="'app.work'"> -->
+                        <!-- asza -->
+                    <!-- </div> -->
+                    <!-- <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li> -->
 
 
 
                     <!-- <div ng-controller="LoginController"> -->
-                        <li ng-controller="LoginController" ui-sref-active="active" class="authorize" permission permission-except="'AUTHORIZED'">
-                            <a ui-sref="app.login">Login</a>
+                        <!-- <li ng-controller="LoginController" ui-sref-active="active" class="authorize" permission permission-except="'AUTHORIZED'"> -->
+                        <li ui-sref-active="active" class="authorize" permission permission-except="'AUTHORIZED'">
+                            <a ui-sref="app.login">Вход</a>
                         <li>    
                     <!-- </div> -->
 
                     <!-- <div ng-controller="LogoutController"> -->
                         <li ng-controller="LogoutController" ui-sref-active="active" class="authorize" permission permission-only="'AUTHORIZED'">
                             <!-- <a ui-sref="app.login">Login</a> -->
-                            <a ui-sref="" ng-click="logout()">LOGOUT</a>
+                            <a ui-sref="" ng-click="logout()">Выход</a>
                             <!-- <li ui-sref-active="active"><a ui-sref="app.work">Work</a></li> -->
                         <li>
                     <!-- </div> -->

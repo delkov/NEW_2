@@ -1,4 +1,24 @@
-app.factory('AuthService',
+app
+.factory('Movie',function($resource){
+    // return $resource('http://movieapp-13434.onmodulus.net/api/movies/:id',{id:'@_id'},{
+    //     update: {
+    //         method: 'PUT'
+    //     }
+    // });
+        // console.log('GETTING')
+            // return $resource('http://movieapp-sitepointdemos.rhcloud.com/api/movies/');
+            // return $resource('http://localhost:3000/air_data').get();
+      return $resource(
+      'http://localhost:3000/air_data'
+      // { method: 'getTask', q: '*' }, // Query parameters
+      // {'query': { method: 'GET' }}
+      // {'query': {method: 'GET', isArray: false }}
+    );
+
+
+})
+
+.factory('AuthService',
   ['$q', '$timeout', '$http',
   function ($q, $timeout, $http) {
 

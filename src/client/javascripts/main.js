@@ -1,7 +1,17 @@
 var app = angular.module('app', [
     'ui.router',
     'permission',
-    'permission.ui'
+    'permission.ui',
+    'highcharts-ng',
+    'ngSanitize', // used for ui.select 
+    'ui.select',
+    'ui.grid',
+    'ui.grid.cellNav',
+    'ui.grid.selection',
+    'ui.grid.exporter',
+    // 'ui.grid.autoResize',
+    // 'ui.grid.uiGridCustomCellSelect',
+    'moment-picker'
     ]);
 
 app
@@ -33,17 +43,9 @@ app
         url: '/bio',
         views: {
           article: {
-            templateUrl: 'partials/bio.html'
-          }
-        }
-      })
+            templateUrl: 'partials/bio.html',
+            controller:'bioController'
 
-      .state('app.map', {
-        url: '/map',
-        views: {
-          article: {
-            templateUrl: 'partials/map.html'
-            // controller:'LoginController'
           }
         }
       })
@@ -52,23 +54,128 @@ app
         url: '/work',
         views: {
           article: {
-            templateUrl: 'partials/work.html'
-          }
-        },
-        data: {
-          permissions: {
-            only: ['AUTHORIZED'],
-            redirectTo: ['$q', function ($q) {
-              return $q.resolve({
-                state: 'app.login',
-                options: {
-                  reload: true
-                }
-              });
-            }]
+            templateUrl: 'partials/work.html',
           }
         }
       })
+
+      // .state('app.monit', {
+      //   url: '/monit',
+      //   views: {
+      //     article: {
+      //       templateUrl: 'partials/monit.html',
+      //       controller:'MonitController'
+      //     }
+      //   },
+      //   data: {
+      //     permissions: {
+      //       only: ['AUTHORIZED'],
+      //       redirectTo: ['$q', function ($q) {
+      //         return $q.resolve({
+      //           state: 'app.bio',
+      //           options: {
+      //             reload: true
+      //           }
+      //         });
+      //       }]
+      //     }
+      //   }
+      // });
+
+
+      .state('app.monit', {
+        url: '/monit',
+        views: {
+          article: {
+            templateUrl: 'partials/monit.html',
+            controller:'MonitController'
+          }
+        },
+        data: {
+          // permissions: {
+            // only: ['AUTHORIZED'],
+            // redirectTo: ['$q', function ($q) {
+            //   return $q.resolve({
+            //     state: 'app.bio',
+            //     options: {
+            //       reload: true
+            //     }
+            //   });
+            // }]
+          // }
+        }
+      })
+      .state('app.stats', {
+        url: '/stats',
+        views: {
+          article: {
+            templateUrl: 'partials/stats.html',
+            controller:'StatsController'
+          }
+        },
+        data: {
+          // permissions: {
+            // only: ['AUTHORIZED'],
+            // redirectTo: ['$q', function ($q) {
+            //   return $q.resolve({
+            //     state: 'app.bio',
+            //     options: {
+            //       reload: true
+            //     }
+            //   });
+            // }]
+          // }
+        }
+      })
+      .state('app.noise', {
+        url: '/noise',
+        views: {
+          article: {
+            templateUrl: 'partials/noise.html',
+            controller:'NoiseController'
+          }
+        },
+        data: {
+          // permissions: {
+            // only: ['AUTHORIZED'],
+            // redirectTo: ['$q', function ($q) {
+            //   return $q.resolve({
+            //     state: 'app.bio',
+            //     options: {
+            //       reload: true
+            //     }
+            //   });
+            // }]
+          // }
+        }
+      })
+
+
+      .state('app.tracks', {
+        url: '/tracks',
+        views: {
+          article: {
+            templateUrl: 'partials/tracks.html',
+            controller:'TracksController'
+          }
+        },
+        data: {
+          // permissions: {
+            // only: ['AUTHORIZED'],
+            // redirectTo: ['$q', function ($q) {
+            //   return $q.resolve({
+            //     state: 'app.bio',
+            //     options: {
+            //       reload: true
+            //     }
+            //   });
+            // }]
+          // }
+        }
+      });
+
+
+
 
       // .state('app.location', {
       //   url: '/location',
@@ -115,7 +222,7 @@ app
 
   .value('appConf', {
     isAuthorized: false,
-    isCollapsed: false
+    isAdmin: false
   })
 
   .run(function (PermRoleStore,$http,appConf,$state) {
@@ -127,12 +234,20 @@ app
         console.log(data)
         if(data.data.status){
           console.log('LOOKS LIKE LOGED')
+          if(data.data.admin){
+            appConf.isAdmin=true;  
+          } else {
+            appConf.isAdmin=false;  
+          }
+
           appConf.isAuthorized=true;
+            // appConf.isAdmin=true;  
           // $state.go('app.work');
           // user = true;
         } else {
           console.log('LOOKS LIKE LOGED OUT')
           appConf.isAuthorized=false;
+          appConf.isAdmin=false;  
           // user = false;
         }
       })
